@@ -1,7 +1,7 @@
 {
   "name": "bundl-rename",
-  "version": "1.0.0",
-  "description": "Rename dest files",
+  "version": "1.1.0",
+  "description": "Rename bundles",
   "main": "index.js",
   "scripts": {
     "test": "node test/automated"
