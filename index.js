@@ -26,8 +26,10 @@ module.exports = function (options) {
         var bundl = this;
         var newName = r.name;
 
-        // override all others with remap if set
-        if (options.remap) {
+        if (typeof options === 'function') {
+            newName = options(r.name, r);
+
+        } else if (options.remap) {
             newName = options.remap[r.name] || r.name;
 
         } else {
@@ -43,11 +45,8 @@ module.exports = function (options) {
         }
 
         if (newName !== r.name) {
-            if (bundl.args && bundl.args.verbose) {
-                bundl.log('Renaming ' + r.name + ' to ' + newName);
-            }
             r.name = newName;
-            r.dest = path.dirname(r.dest) + '/' + newName;
+            r.dest = (path.isAbsolute(r.dest) ? path.resolve(r.options.outputDir) : path.dirname(r.dest)) + '/' + newName;
         }
 
         return contents;

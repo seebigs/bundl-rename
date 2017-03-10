@@ -6,7 +6,10 @@ describe('rename', function () {
     function doRename (rn) {
         var resource = {
             name: 'original.file_name.js',
-            dest: '/absolute/path/original.file_name.js'
+            dest: '/absolute/path/original.file_name.js',
+            options: {
+                outputDir: '/new/path/out'
+            }
         };
         rn.one('', resource);
         return resource.name;
