@@ -23,7 +23,7 @@ bundl(targets)
     .then(minify())
     .then(rename(options))
     .then(write())
-    .all();
+    .go();
 ```
 
 ## Options
