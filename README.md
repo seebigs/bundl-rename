@@ -13,12 +13,12 @@ $ npm install --save-dev bundl-rename
 ## Use
 
 ```js
-var bundl = require('bundl');
+var Bundl = require('bundl');
 var minify = require('bundl-minify');
 var rename = require('bundl-rename');
 var write = require('bundl-write');
 
-bundl(targets)
+new Bundl(targets)
     .then(write())
     .then(minify())
     .then(rename(options))

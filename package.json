@@ -4,7 +4,7 @@
   "description": "Rename bundles",
   "main": "index.js",
   "scripts": {
-    "test": "node test/automated"
+    "test": "node test"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,6 @@
     "url": "https://github.com/seebigs/bundl-rename/issues"
   },
   "devDependencies": {
-    "feather-test": "^1.1.0"
+    "feather-test": "^4.0.0"
   }
 }

@@ -22,7 +22,7 @@ module.exports = function (options) {
         };
     }
 
-    function one (contents, r) {
+    function rename (r) {
         var bundl = this;
         var newName = r.name;
 
@@ -49,11 +49,12 @@ module.exports = function (options) {
             r.dest = (path.isAbsolute(r.dest) ? path.resolve(r.options.outputDir) : path.dirname(r.dest)) + '/' + newName;
         }
 
-        return contents;
+        return r;
     }
 
     return {
-        one: one
+        name: 'rename',
+        exec: rename,
     };
 
 };

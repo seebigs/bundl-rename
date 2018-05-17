@@ -11,7 +11,7 @@ describe('rename', function () {
                 outputDir: '/new/path/out'
             }
         };
-        rn.one('', resource);
+        rn.exec(resource);
         return resource.name;
     }
 
